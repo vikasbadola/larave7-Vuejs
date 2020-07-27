@@ -98,8 +98,11 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        $user = Task::findOrFail($id);
-        $user->delete();
+        $task = Task::findOrFail($id);
+        $task->delete();
+        // delete task history
+        $taskHistory = TaskHistory::where('taskID','=',$id);
+        $taskHistory->delete();
         return response()->json([
          'message' => 'Task deleted successfully'
         ]);

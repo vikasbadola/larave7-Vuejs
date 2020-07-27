@@ -23,7 +23,7 @@ class DashboardController extends Controller
     {
         $userId = Auth::user()->id;
         $taskList = \DB::select("SELECT `status`,DATE_FORMAT(created_at,'%i') as dte FROM task_histories WHERE  
-            updated_at BETWEEN DATE_FORMAT((DATE_SUB(NOW(),INTERVAL 1 HOUR)), '%Y-%m-%d %H:00:00') AND 
+            created_at BETWEEN DATE_FORMAT((DATE_SUB(NOW(),INTERVAL 1 HOUR)), '%Y-%m-%d %H:00:00') AND 
             DATE_FORMAT(NOW(), '%Y-%m-%d %H:00:00') AND userID = '$userId' 
             GROUP BY taskID,status order by id");
         $tasksArr = [];
