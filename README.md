@@ -17,7 +17,6 @@
 - composer install
 - npm install
 - php artisan migrate
-- php artisan migrate
 - php artisan serve --port 8089
 - php artisan test (To perform test cases)
 
