@@ -16,6 +16,7 @@
 ## Installation
 - composer install
 - npm install
+- copy .env file and setup database
 - php artisan migrate
 - php artisan serve --port 8089
 - php artisan test (To perform test cases)
